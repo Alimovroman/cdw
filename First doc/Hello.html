@@ -244,6 +244,43 @@ function convertToInteger(str) {
 }
 
 convertToInteger("56");
+
+function barTriang(p1, p2, p3){
+  let x = ((p1[0] + p2[0] + p3[0]) / 3) ;
+  let y = ((p1[1] + p2[1] + p3[1]) / 3) ;
+  x = x.toFixed(4) ;
+  y = y.toFixed(4) ;
+  let arr = [Number(x), Number(y)]
+  console.log(arr)
+  //your code here
+}
+function friend(friends){
+  let myFriends = [];
+  for (let i = 0; i<friends.length; i++) {
+    if (friends[i].length <= 4 && !/[^a-zA-Z]/.test(friends[i])) {
+      myFriends.push(friends[i])
+    }
+  }
+  return( myFriends)
+  //your code here
+}
+function getSum( a,b ) {
+  let sum = 0;
+  if (a < b) {
+    for (let i = a; i <= b; i++ ) {
+      sum += i
+    }
+    return sum
+  } else  {
+    for (let i = a; i >= b; i-- ) {
+      sum += i
+    }
+    return sum
+  }
+ 
+}
+console.log(getSum(2, 0))
+
   </script>
 </body>
 

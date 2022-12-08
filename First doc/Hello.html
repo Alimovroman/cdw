@@ -284,9 +284,16 @@ const stringToNumber = function(str){
   // put your code here
   return  +str;
 }
-let arr = [1,2,3,4]
-console.log(Math.min.apply(null, arr))
-
+function isPythagoreanTriple(integers) {
+  if ( integers[0] * integers[0] + integers[1]*integers[1] === integers[2] * integers[2] 
+      || integers[1] * integers[1] + integers[2]*integers[2] === integers[0] * integers[0] 
+      || integers[0] * integers[0] + integers[2]*integers[2] === integers[2] * integers[1]) {
+    return true
+  }
+  return false
+  // Good luck friends!
+}
+console.log(isPythagoreanTriple([3, 5, 9]))
 
   </script>
 </body>

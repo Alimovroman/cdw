@@ -314,7 +314,14 @@ const binaryArrayToNumber = arr => {
   return parseInt(str, 2 )
   // your code
 };
-console.log(binaryArrayToNumber ([0,0,0,1,1]))
+function abbrevName(name){
+  let arr = name.split(' ')
+  let newName = `${arr[0][0]}.${arr[1][0]}`
+  return newName.toUpperCase()
+    // code away
+
+}
+console.log(abbrevName ('Sam Harris'))
 
   </script>
 </body>

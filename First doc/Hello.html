@@ -296,7 +296,16 @@ function isPythagoreanTriple(integers) {
 function disemvowel(str) {
   return str.replace(/[aeiou]/gi, '');
 }
-console.log(disemvowel('Thisy website is for losers LOL!'))
+function solution(str, ending){
+  
+  let maxStr = ending.length - 1;
+  if (ending ==='' || str.slice(-ending.length) === ending) {
+    return true;
+  } return false;
+  TODO: complete
+  // return str.slice(-3)
+}
+console.log(solution('abc', ''))
 
   </script>
 </body>

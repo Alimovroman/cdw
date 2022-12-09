@@ -305,7 +305,16 @@ function solution(str, ending){
   TODO: complete
   // return str.slice(-3)
 }
-console.log(solution('abc', ''))
+const binaryArrayToNumber = arr => {
+  let str = '';
+  for (let i=0; i< arr.length; i++) {
+    str += arr[i]
+  }
+  str = +str;
+  return parseInt(str, 2 )
+  // your code
+};
+console.log(binaryArrayToNumber ([0,0,0,1,1]))
 
   </script>
 </body>

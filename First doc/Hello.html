@@ -321,7 +321,22 @@ function abbrevName(name){
     // code away
 
 }
-console.log(abbrevName ('Sam Harris'))
+function century(year) {
+  // Finish this :)
+  let arr = String(year).split('');
+  let endNum = arr.slice(-2).join('')
+  let result = '';
+  for (let i = 0; i < arr.length - 2; i ++) {
+      result += arr[i]
+    }
+
+  if( arr.length <= 2) {
+    return result = 1
+  } else if (+endNum === 0) {
+    return +result
+  } return result = +result + 1;
+}
+console.log(century(190))
 
   </script>
 </body>

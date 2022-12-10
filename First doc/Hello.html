@@ -342,7 +342,13 @@ function highAndLow(numbers){
   return result;
   // ...
 }
-console.log(highAndLow('1 2 3'))
+function areYouPlayingBanjo(name) {
+  if (name[0].toUpperCase() === 'R') {
+    return `${name} plays banjo`;
+  }
+  return `${name} does not play banjo`
+}
+console.log(areYouPlayingBanjo('Ringo'))
 
   </script>
 </body>

@@ -362,7 +362,23 @@ function countBy(x, n) {
    z = z[0] === 1 ? z : z.map((e,i) => e = e === x ? x : x * (i+1) )
   return z;
 }
-console.log(countBy(1, 5))
+function countPositivesSumNegatives(input) {
+  let arr = [0,0]
+  if(input=== null || input.length === 0) {
+    arr = []
+  } else {
+    for(let i = 0; i < input.length; i++) {
+    if (input[i] > 0) {
+      arr[0] += 1
+    } else {
+      arr[1] += input[i]
+    }
+  }
+  }
+return arr
+  // your code here
+}
+console.log(countPositivesSumNegatives(null))
   </script>
 </body>
 

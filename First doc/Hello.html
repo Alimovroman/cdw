@@ -378,7 +378,23 @@ function countPositivesSumNegatives(input) {
 return arr
   // your code here
 }
-console.log(countPositivesSumNegatives(null))
+function litres(time) {
+  let litre = 0.5
+
+  return Math.floor(time * litre);
+}
+function past(h, m, s){
+  //#Happy Coding! ^_^
+  let now = new Date(0,0,0)
+  let time = new Date(
+    now.getFullYear(),
+        now.getMonth(),
+        now.getDate(),
+        h,m,s)
+  
+  return  time - now
+}
+console.log(past(0,1,1))
   </script>
 </body>
 

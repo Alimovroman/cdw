@@ -421,9 +421,20 @@ function addingShifted (arrayOfArrays, shift) {
     return yourPoints >= middlePoints ? true : false
   // Your code here
 }
+function mango(quantity, price){
+  let superfluousPrice = 0
+  const oneBlockPrice = price * 2;
+  const blocks = Math.floor(quantity / 3)
+  superfluousPrice = (quantity - blocks * 3) * price
 
+  const result = quantity <=2 
+    ? quantity * price 
+    : blocks * oneBlockPrice + superfluousPrice
+  return result
+
+}
   
-  console.log(betterThanAverage([2, 3], 2))
+  console.log(mango(83, 16))
   
 
 

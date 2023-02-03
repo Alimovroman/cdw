@@ -436,15 +436,23 @@ function mango(quantity, price){
 function createArray(number){
   var newArray = [];
   
-  for(var counter = 1; counter <= number; i++){
+  for(var counter = 1; counter <= number; counter++){
     return console.log(counter)
     //newArray.push(counter);
   }
   
   return newArray;
 }
-  
-  console.log(createArray(2))
+function boolToWord( bool ){
+  return  bool ? "Yes" : "No"
+  //...
+}
+function solution(str){
+  let result = [...str].reverse().join('')
+  return result
+}
+
+  console.log(solution('world'))
   
 
 

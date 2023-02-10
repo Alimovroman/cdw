@@ -223,5 +223,227 @@
             }))
         }
     } //  is done
+    //1. сортирует строки из коробки без всяких параметров
+//2. сортирует буквы и числа по алфавиту/порядку в зависимотчи от таблицы символов Юникода( в которой есть порядок как раз что за чем идет)
+//3. Работает мутабельно
+//4. Возвращает ссылку на исходный массив
+
+// const str = ['alex', 'roma', 'boog', 'Alimov', 584, 'Саша', 'юра']
+// console.log(str.sort() === str)
+//
+// const numbers = [123, '+20', -300, 77, 99]
+// console.log(numbers.sort())
+//
+// const compareFn = (a, b) => { //по возрастанию сортируем
+//     if (a > b) { // надо поменять местами
+//         return 5567
+//     } else { // не надо перетавлять
+//         return -1234
+//     }
+// }
+//
+// console.log(numbers.sort((a, b) => a - b))
+// console.log(numbers.reverse())
+//
+// const students = [
+//     {
+//         name: "Bob",
+//         age: 22,
+//         isMarried: true,
+//         scores: 95
+//     },
+//     {
+//         name: "Alex",
+//         age: 24,
+//         isMarried: true,
+//         scores: 89
+//     },
+//     {
+//         name: "Helge",
+//         age: 24,
+//         isMarried: true,
+//         scores: 90
+//     },
+//     {
+//         name: "Nick",
+//         age: 20,
+//         isMarried: false,
+//         scores: 120
+//     },
+//     {
+//         name: "John",
+//         age: 19,
+//         isMarried: false,
+//         scores: 121
+//     },
+//     {
+//         name: "alex",
+//         age: 22,
+//         isMarried: true,
+//         scores: 89
+//     },
+// ];
+//
+// const compareObjName = (a, b) => {
+//     if (a.name > b.name) { // то переставляем местами
+//         return +5854
+//     } else {
+//         return -1
+//     }
+// }
+//
+// console.log(students.sort((a, b) => a.name.localeCompare(b.name)))
+//
+// // по сисловым значениям
+// console.log(students.sort((a, b) => a.scores - b.scores))
+//
+// const numbers1 = [67, 31, 12, 22]
+//
+// for (let j = 0; j < numbers1.length - 1; j++) {
+//     let isSorted = true
+//     for (let i = 0; i < numbers1.length - 1 - j; i++) {
+//         if (numbers1[i] > numbers1[i + 1]) {
+//             isSorted = false;
+//             //меняем
+//             // let temp = numbers1[i]
+//             // numbers1[i] = numbers1[i + 1]
+//             // numbers1[i + 1] = temp
+//
+//                [numbers1[i+1], numbers1[i]] = [numbers1[i], numbers1[i+1]]
+//         }
+//     }
+//     if (isSorted) break
+// }
+//
+// console.log(numbers1)
+
+const students = [
+    {
+        name: "Bob",
+        age: 22,
+        isMarried: true,
+        scores: 85,
+    },
+    {
+        name: "Alex",
+        age: 21,
+        isMarried: true,
+        scores: 90,
+    },
+    {
+        name: "Nick",
+        age: 20,
+        isMarried: false,
+        scores: 120,
+    },
+    {
+        name: "John",
+        age: 19,
+        isMarried: false,
+        scores: 100,
+    },
+    {
+        name: "Helen",
+        age: 20,
+        isMarried: false,
+        scores: 110,
+    },
+    {
+        name: "Ann",
+        age: 20,
+        isMarried: false,
+        scores: 105,
+    },
+];
+
+const user = {
+    name: "Bob",
+    age: 23,
+    isMarried: false,
+    friends: ["Alex", "Nick", "John"],
+};
+
+const copyUser = {...user} // is done
+// console.log(copyUser === user)
+// console.log(copyUser.friends === user.friends)
+
+//2 is done
+const copyUser2 = { // is done
+    ...user,
+    friends: [...user.friends]
+}
+// console.log(copyUser2 === user)
+// console.log(copyUser.friends2 === user.friends)
+
+//3 is done
+const copyStudents = [...students]
+// console.log(copyStudents[3] === students[3])
+
+//4 is done
+const deepCopyStudents = students.map(el => ({...el}))
+// console.log(deepCopyStudents[4] === students[4])
+
+//5 is done
+const sortByName = deepCopyStudents.sort((a, b) => a.name.localeCompare(b.name))
+//console.log(sortByName)
+//5.a is done
+const sortByScores = deepCopyStudents.sort((a, b) => b.scores - a.scores)
+// console.log(sortByScores)
+
+//6 is done
+const bestStudents = deepCopyStudents.filter(el => el.scores >= 100)
+//console.log(bestStudents)
+//6.a is done
+const topStudents = deepCopyStudents.sort((a, b) => b.scores - a.scores).splice(0, 3)
+//console.log(topStudents)
+//6b is done
+//const newDeepCopyStudents = topStudents.concat(deepCopyStudents)
+const newDeepCopyStudents = [...topStudents, ...deepCopyStudents]
+console.log(newDeepCopyStudents)
+
+//7 is done
+const notMarriedStudents = students.filter(el => el.isMarried === false)
+console.log(notMarriedStudents)
+
+//8 is done
+const studentsName = students.map(el => el.name)
+console.log(studentsName)
+//8a is done
+const nameWithSpace = studentsName.join(' ')
+const nameWithComma = studentsName.join(', ')
+console.log(nameWithSpace)
+console.log(nameWithComma)
+
+//9 is done
+const trueStudents = students.map(s => ({...s, isStudent: true}))
+console.log(trueStudents)
+
+//10 is done
+const studentsWithMarriedNick = students.map(s => s.name === "Nick"
+    ? {...s, isMarried: true}
+    : s
+)
+console.log(studentsWithMarriedNick)
+
+//11 is done
+const ann = students.filter(s => s.name === "Ann")
+console.log(ann)
+
+//12 - is done
+const scoreSum = students.reduce((accum, currentValue) => accum.scores < currentValue.scores ? currentValue : accum
+, students[0])
+console.log(scoreSum)
+
+//13 - is done
+const scoresSum = students.reduce((accum,  currentValue) => accum + currentValue.scores, 0)
+console.log(scoresSum)
+
+//14 - is done
+const addFriends = (students) => {
+    const friends = students.map(s => s.name)
+    const result = students.map(s => ({...s, friends: friends.filter(el => el!== s.name)}))
+    return result
+}
+console.log(addFriends(students))
 
 </script>

@@ -16,30 +16,18 @@
   <p>yo yo yo</p>
   <script>
 
-    let a = {
-      name: 'asda',
-      protocol: 'http',
-      isOnline: true,
-      country: {
-         city: 'RZN'
-      },
-      classroom : {
-        teacher: {
-          name: 'alex',
-          age: 18
-        }
-      }
+    function timeCorrect(timestring) {
+      const result = timestring.split(':')
+      const [hours,minutes, seconds] = result
+      hours = +hours > 24 ? +hours/24 : hours
+      
+      return hours
     }
-    let b = {
-      ...a
-    }
-    b.name = 'Eueeue'
-    b.country = {...a.country}
-    b.country.city = 'MSK'
-
-  console.log(a)
-  console.log(b)
-  
+    function makeNegative(num) {
+  return -num
+  // Code?
+}
+    console.log(timeCorrect("25:10:01"));
 
 
   </script>

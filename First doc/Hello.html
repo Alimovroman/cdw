@@ -23,11 +23,21 @@
       
       return hours
     }
-    function makeNegative(num) {
-  return -num
-  // Code?
+    function sumOfMinimums(arr) {
+      let result = []
+      for (let i = 0; i <arr.length; i++) {
+        let newArr = arr[i].sort((a,b) => a-b)
+        let removedArr = newArr.splice(0, 1)
+        result = [
+          ...result,
+          +removedArr.toString()
+        ]
+        
+      }
+      
+      return result.reduce((accum, currentValue) => accum + currentValue,0)  // your code here
 }
-    console.log(timeCorrect("25:10:01"));
+    console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]));
 
 
   </script>

@@ -16,45 +16,22 @@
   <p>yo yo yo</p>
   <script>
 
-    function timeCorrect(timestring) {
-      const result = timestring.split(':')
-      const [hours,minutes, seconds] = result
-      hours = +hours > 24 ? +hours/24 : hours
-      
-      return hours
-    }
-    function sumOfMinimums(arr) {
-      let result = []
-      for (let i = 0; i <arr.length; i++) {
-        let newArr = arr[i].sort((a,b) => a-b)
-        let removedArr = newArr.splice(0, 1)
-        result = [
-          ...result,
-          +removedArr.toString()
-        ]
-        
-      }
-      
-      return result.reduce((accum, currentValue) => accum + currentValue,0)  // your code here
-}
-function setAlarm(employed, vacation){
-  return employed & !vacation ? true : false
-}
-function repeatStr (n, s) {
-  return s.repeat(n);
-}
-function noIfsNoButs(a, b) {
+function isItANum(str) {
 
-  function noIfsNoButs(a, b) {
+  const result = [...str].filter((el) => el === '0'|| el ==='1' || el ==='2' || el ==='3' 
+  || el ==='4' || el ==='5' || el ==='6' || el ==='7' || el ==='8' || el ==='9' ).join('')
 
-   return a > b && `${a} is greater than ${b}` 
-   || a < b &&  `${a} is smaller than ${b}` 
-   || a === b &&  `${a} is equal to ${b}`
+  if (result[0] === '0' && result.length === 11) {
+    return result
+  } else {
+    return 'Not a phone number'
+  }
 
-} 
+  
+// your code here;
 }
 
-
+console.log(isItANum("0192387415456"));
   </script>
 </body>
 

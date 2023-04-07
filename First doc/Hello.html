@@ -16,22 +16,13 @@
   <p>yo yo yo</p>
   <script>
 
-function isItANum(str) {
-
-  const result = [...str].filter((el) => el === '0'|| el ==='1' || el ==='2' || el ==='3' 
-  || el ==='4' || el ==='5' || el ==='6' || el ==='7' || el ==='8' || el ==='9' ).join('')
-
-  if (result[0] === '0' && result.length === 11) {
-    return result
-  } else {
-    return 'Not a phone number'
-  }
-
-  
-// your code here;
+function contamination(text, char){
+  const result = [...text].map(el => char).join('')
+  return text === '' || char === '' ? '' : result
+  // Code here ;)
 }
 
-console.log(isItANum("0192387415456"));
+console.log(contamination("abc","z"));
   </script>
 </body>
 

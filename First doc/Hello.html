@@ -16,13 +16,20 @@
   <p>yo yo yo</p>
   <script>
 
-function contamination(text, char){
-  const result = [...text].map(el => char).join('')
-  return text === '' || char === '' ? '' : result
-  // Code here ;)
+function remove (string) {
+  //coding and coding....
+
+  return string.split(' ').filter(el => {
+    let specialSymbol = '';
+    [...el].forEach(e => e === '!' ? specialSymbol += e : '')
+    return specialSymbol.length !== 1
+}).join(' ')
+// let specialSymbol = ''
+//  let a = [...string].forEach(e => e === '!' ? specialSymbol += e : '')
+//  return specialSymbol
 }
 
-console.log(contamination("abc","z"));
+console.log(remove('Hi! Hi! !Hi!'));
   </script>
 </body>
 

@@ -14,19 +14,12 @@
     Hello
   </h2>
   <p>yo yo yo</p>
+  
   <script>
 
-function remove (string) {
-  //coding and coding....
-
-  return string.split(' ').filter(el => {
-    let specialSymbol = '';
-    [...el].forEach(e => e === '!' ? specialSymbol += e : '')
-    return specialSymbol.length !== 1
-}).join(' ')
-// let specialSymbol = ''
-//  let a = [...string].forEach(e => e === '!' ? specialSymbol += e : '')
-//  return specialSymbol
+function booleanToString(b){
+  //your code here
+  return b.toString()
 }
 
 console.log(remove('Hi! Hi! !Hi!'));

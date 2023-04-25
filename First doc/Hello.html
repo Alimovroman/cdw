@@ -17,12 +17,48 @@
 
   <script>
 
-function hoopCount (n) {
-   //your code goes here   
-  return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it'
-}
+function greet(language) {
+	switch (language) {
+      case 'english':
+        return 'Welcome'
+      case 'czech':
+        return 'Vitejte'
+      case 'danish':
+        return 'Velkomst'
+      case 'estonian':
+        return 'Tere tulemast'
+      case 'finnish':
+        return 'Tervetuloa'
+      case 'flemish':
+        return 'Welgekomen'
+      case 'german': 
+        return 'Willkommen'
+      case 'french':
+        return 'Willkommen'
+      case 'irish':
+        return 'Failte'
+      case 'italian':
+        return 'Benvenuto'
 
-console.log(remove('Hi! Hi! !Hi!'));
+        case 'latvian':
+          return  'Gaidits'
+        case 'lithuanian':
+          return 'Laukiamas'
+        case 'polish':
+          return 'Witamy'
+        case 'spanish': 
+          return 'Bienvenido'
+        case 'swedish':
+          return 'Valkommen'
+        case 'welsh':
+          return 'Croeso'
+        default:
+          return 'Welcome'
+
+  }
+}
+console.log(222);
+console.log(greet('dutch'));
   </script>
 </body>
 

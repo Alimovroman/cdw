@@ -17,48 +17,32 @@
 
   <script>
 
-function greet(language) {
-	switch (language) {
-      case 'english':
-        return 'Welcome'
-      case 'czech':
-        return 'Vitejte'
-      case 'danish':
-        return 'Velkomst'
-      case 'estonian':
-        return 'Tere tulemast'
-      case 'finnish':
-        return 'Tervetuloa'
-      case 'flemish':
-        return 'Welgekomen'
-      case 'german': 
-        return 'Willkommen'
-      case 'french':
-        return 'Willkommen'
-      case 'irish':
-        return 'Failte'
-      case 'italian':
-        return 'Benvenuto'
-
-        case 'latvian':
-          return  'Gaidits'
-        case 'lithuanian':
-          return 'Laukiamas'
-        case 'polish':
-          return 'Witamy'
-        case 'spanish': 
-          return 'Bienvenido'
-        case 'swedish':
-          return 'Valkommen'
-        case 'welsh':
-          return 'Croeso'
-        default:
-          return 'Welcome'
-
-  }
+function opposite(number) {
+  //your code here
+  return number * -1
 }
-console.log(222);
-console.log(greet('dutch'));
+function stringToArray(string){
+
+// code code code
+return string.split(' ')
+}
+function likeOrDislike(buttons) {
+  let counter = buttons[0]
+  if(buttons[0] === undefined) {
+    return 'Nothing'
+  }
+  if(buttons.length > 0) {
+  for(let i = 1; i < buttons.length; i++) {
+    counter === buttons[i] 
+        ? counter = 'Nothing'
+        :counter = buttons[i]
+  }
+  }
+  return counter
+
+ // return Like || Dislike || Nothing ;
+}
+console.log(likeOrDislike([]));
   </script>
 </body>
 

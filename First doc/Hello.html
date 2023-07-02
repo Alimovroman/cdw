@@ -17,32 +17,21 @@
 
   <script>
 
-function opposite(number) {
-  //your code here
-  return number * -1
+function noBoringZeros(n) {
+  const nLength = n.toString().length
+  const arr = ([...n.toString()].reverse())
+  for (let i = 0; i<nLength; i++ ) {
+    if(arr[0] === '0'){
+      arr.shift()
+    } 
+  }
+  
+  
+  return  +arr.reverse().join('') 
+   return  arr
 }
-function stringToArray(string){
 
-// code code code
-return string.split(' ')
-}
-function likeOrDislike(buttons) {
-  let counter = buttons[0]
-  if(buttons[0] === undefined) {
-    return 'Nothing'
-  }
-  if(buttons.length > 0) {
-  for(let i = 1; i < buttons.length; i++) {
-    counter === buttons[i] 
-        ? counter = 'Nothing'
-        :counter = buttons[i]
-  }
-  }
-  return counter
-
- // return Like || Dislike || Nothing ;
-}
-console.log(likeOrDislike([]));
+console.log(noBoringZeros(960000));
   </script>
 </body>
 

@@ -17,21 +17,23 @@
 
   <script>
 
-function noBoringZeros(n) {
-  const nLength = n.toString().length
-  const arr = ([...n.toString()].reverse())
-  for (let i = 0; i<nLength; i++ ) {
-    if(arr[0] === '0'){
-      arr.shift()
-    } 
+function sumMul(n,m){
+  if (n <= 0 | m <= 0) {
+    return "INVALID"
+  } else {
+    let result = 0
+    for (let i = n; i< m; i+=n) {
+      result += i
+      console.log(i)
+  
+    }
+    return result
+
   }
-  
-  
-  return  +arr.reverse().join('') 
-   return  arr
+//your idea here
 }
 
-console.log(noBoringZeros(960000));
+console.log(sumMul(3, 13));
   </script>
 </body>
 
